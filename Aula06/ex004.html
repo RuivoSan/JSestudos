@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body 
+        {
+            font: normal 20pt Arial;
+        }
+    </style>
 </head>
 <body>
     
     <script>
         var nome = prompt('Qual seu nome? ')
-        var idade = prompt('Digite sua idade: ')
-        var peso = prompt('Digite seu peso: ')
+        //var idade = prompt('Digite sua idade: ')
+        //var peso = prompt('Digite seu peso: ')
 
-        alert(`Nome: ${nome}, ${idade} anos, peso: ${peso}KG`)
+        //alert(`Nome: ${nome}, ${idade} anos, peso: ${peso}KG`)
+        document.write(`Ola ${nome}. Seu nome tem ${nome.length} letras. <br>`)
+        document.write(`O seu nome em maiúsculo fica ${nome.toUpperCase()} <br>`)
+        document.write(`E em minúsculo fica ${nome.toLowerCase()}`)
 
     </script>
 </body>
