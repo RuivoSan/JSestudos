@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+</head>
+<body>
+    <h1>Estrangeiro ou Brasileiro?</h1>
+    Digite o seu país atual <input type="text" name="txtcc" id="txtcc">
+    <input type="button" value="Verificar" onclick="responder()">
+    <div id="res">
+        
+    </div>
+
+    <script>
+        
+        function responder() {
+            var c = window.document.querySelector('input#txtcc')
+            var country = c.value
+
+            if (country != 'Brasil') {
+                res.innerHTML += 'Você é <strong>Estrangeiro</strong>!'
+            }else {
+                res.innerHTML += 'Você é <strong>Brasileiro</strong>!'
+            }
+
+        }
+        
+    </script>
+
+</body>
+</html>
