@@ -1,20 +1,21 @@
 function contar(){
-    var txtini = document.querySelector('input#txtini')
-    var txtfim = document.querySelector('input#txtfim')
-    var txtpas = document.getElementById('txtpas')
+    var fini = document.getElementById('txtini')
+    var ffim = document.getElementById('txtfim')
+    var fpas = document.getElementById('txtpas')
     var res = document.querySelector('div#res')
 
-    res.innerHTML = ''
-    window.alert(`${ini}`)
+    res.innerHTML = ``
 
-    if (txtini.value == '') {
+    if (txtini.value.length == 0) {
         window.alert('[Erro] Verifique os valores inseridos e tente novamente')
+        res.innerHTML = `Tente novamente`
     }else {
-        var ini = Number(txtini.value)
-        var fim = Number(txtfim.value)
-        var pas = Number(txtpas.value)
-        for (c=ini;c<=fim;c=c+pas){
+        var ini = Number(fini.value)
+        var fim = Number(ffim.value)
+        var pas = Number(fpas.value)
+        for (var c = ini; c<=fim; c=c+pas){
             res.innerHTML += `${c} `
+            
         }
         
     
