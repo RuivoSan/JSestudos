@@ -5,15 +5,18 @@ function contar(){
     let res = document.getElementById('res')
 
     if (ini.value.length == 0 || fim.value.length == 0 || pas.value.length == 0) {
-        window.alert('Erro falta numero')
+        res.innerHTML = 'Impossível contar!'
     }else {
         res.innerHTML = ''
         let i = Number(ini.value)
         let f = Number(fim.value)
         let p = Number(pas.value)
+        if (pas.value == 0) {
+            window.alert('Passo = 0 é inválido! Considerando Passo = 1.')
+            p = 1
+        }
         
-        // Contagem crescente
-        if (i < f) {
+        if (i < f) { // Contagem crescente
             for (let c = i; c <= f; c+=p){
                 res.innerHTML += `${c} \u{1F449}`
             }
