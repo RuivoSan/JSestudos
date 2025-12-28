@@ -1,16 +1,20 @@
-function calcular(){
-    var fnum = document.getElementById('tnumber')
-    
+function tabuada(){
+    let num = document.getElementById('txtn')
+    let tab = document.getElementById('seltab')
 
-    if (fnum.value.length == 0) {
-        window.alert('[Erro] Digite um número!')
-    }else {
-        var num = Number(fnum.value)
-        var tab = document.getElementById('tabuada')
-        tab.innerHTML = ""
-
-        for (c=1;c<=10;c++) {
-            tab.innerHTML += (`<option>${num} x ${c} = ${num * c}</option>`)
+    if (num.value.length == 0) {
+        window.alert('[ERRO] Digite um número!')
+    }else{
+        tab.innerHTML = ''
+        let n = Number(num.value)
+        let c = 1
+        while (c <= 10){
+            let item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n*c}`
+            item.value = `tab${c}`
+            tab.appendChild(item) 
+            c++
         }
     }
+
 }
