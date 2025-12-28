@@ -1,30 +1,34 @@
 function contar(){
-    var fini = document.getElementById('txtini')
-    var ffim = document.getElementById('txtfim')
-    var fpas = document.getElementById('txtpas')
-    var res = document.querySelector('div#res')
+    let fini = document.getElementById('txtini')
+    let ffim = document.getElementById('txtfim')
+    let fpas = document.getElementById('txtpas')
+    let res = document.querySelector('div#res')
 
     res.innerHTML = ''
 
     if (txtini.value.length == 0 || txtfim.value.length == 0 || txtpas.value.length == 0) {
         res.innerHTML = "Impossível contar"
         
-    }else if(txtpas.value == 0){
-        window.alert('Passo = 0 Não pode ser aceito! Considerando Passo = 1')
-        var ini = Number(fini.value)
-        var fim = Number(ffim.value)
-        for (var c = ini; c<=fim; c++){
+    }else {
+        res.innerHTML = "Contando: <br>"
+        let ini = Number(fini.value)
+        let fim = Number(ffim.value)
+        let pas = Number(fpas.value)
+        if (pas == 0) {
+            window.alert("Passo = 0 é inválido! Considerando Passo = 1")
+            pas = 1
+        }
+        if (ini < fim) {
+            for (var c = ini; c<=fim; c+=pas){
             res.innerHTML += `${c} &#x1F449`   
         }
         res.innerHTML += `&#x2705`
-
-    }else {
-        var ini = Number(fini.value)
-        var fim = Number(ffim.value)
-        var pas = Number(fpas.value)
-        for (c=ini;c<=fim;c=c+pas){
+        }else {
+            for (c=ini;c>=fim; c-=pas){
             res.innerHTML += `${c} &#x1F449`  
         }
         res.innerHTML += `&#x2705`
+        }
+        
     }
 }
